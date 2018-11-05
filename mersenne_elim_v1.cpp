@@ -14,6 +14,9 @@ typedef struct {
     BOOL Spracovane;
 } THR_DATA, *PTHR_DATA;
 
+#define FILTER_SIZE 30030
+PBYTE Filter;
+
 //  ...............................................................................................
 //  Vypocet mod
 //  ...............................................................................................
@@ -226,7 +229,7 @@ BOOL TWorkerV1::UlozenieStavu(BOOL iZobrazenieInfo) {
 //  ...............................................................................................
 void TWorkerV1::ZobrazenieInfo(void) {
     LogPrint("\n---------------------------------------------------------------------------------");
-    LogPrint("\nmersenne_elim verzia 1.05");
+    LogPrint("\nmersenne_elim verzia 1.06");
     LogPrint("\n---------------------------------------------------------------------------------");
     LogPrint("\nNastavenia:");
     LogPrint("\n\tPovolene nacitanie predosleho stavu: %s", ParameterExistuje("-inicializacia") ? "nie" : " ano");
@@ -271,13 +274,12 @@ PVOID VlaknoSpracovanie(PVOID iData) {
         
         if ((Kand & 0x7) == 3) { k++; continue; }
         if ((Kand & 0x7) == 5) { k++; continue; }
-        if ((Kand % 3) == 0) { k++; continue; }
-        if ((Kand % 5) == 0) { k++; continue; }
-        if ((Kand % 7) == 0) { k++; continue; }
-        if ((Kand % 11) == 0) { k++; continue; }
-        if ((Kand % 13) == 0) { k++; continue; }
+        if (Filter[Kand % FILTER_SIZE] != 1) { k++; continue; }
         if ((Kand % 17) == 0) { k++; continue; }
         if ((Kand % 19) == 0) { k++; continue; }
+        if ((Kand % 23) == 0) { k++; continue; }
+        if ((Kand % 29) == 0) { k++; continue; }
+        if ((Kand % 31) == 0) { k++; continue; }
 
         //if (VypocetMOD2(Data->Kandidati[k + Data->Zaciatok], Kand) == 1) {
         if (asm_mod(Data->Kandidati[k + Data->Zaciatok], Kand) == 1) {
@@ -295,6 +297,19 @@ PVOID VlaknoSpracovanie(PVOID iData) {
 //  Spracovanie
 //  ...............................................................................................
 void TWorkerV1::Spracovanie(void) {
+
+    //BYTE Filter[FILTER_SIZE]; 
+    Filter = new BYTE[FILTER_SIZE];
+    memset(Filter, 0, sizeof(Filter));
+    for (INT32 i = 0; i < FILTER_SIZE; i++) {
+        if ((i % 2) == 0) continue;
+        if ((i % 3) == 0) continue;
+        if ((i % 5) == 0) continue;
+        if ((i % 7) == 0) continue;
+        if ((i % 11) == 0) continue;
+        if ((i % 13) == 0) continue;
+        Filter[i] = 1;
+    }
 
     if (FPocetVlakien == 1) { // Jednovlaknove spracovanie
 
@@ -314,13 +329,17 @@ void TWorkerV1::Spracovanie(void) {
                 
                 if ((Kand & 0x7) == 3) { k++; continue; }
                 if ((Kand & 0x7) == 5) { k++; continue; }
-                if ((Kand % 3) == 0) { k++; continue; }
-                if ((Kand % 5) == 0) { k++; continue; }
-                if ((Kand % 7) == 0) { k++; continue; }
-                if ((Kand % 11) == 0) { k++; continue; }
-                if ((Kand % 13) == 0) { k++; continue; }
+                //if ((Kand % 3) == 0) { k++; continue; }
+                //if ((Kand % 5) == 0) { k++; continue; }
+                //if ((Kand % 7) == 0) { k++; continue; }
+                //if ((Kand % 11) == 0) { k++; continue; }
+                //if ((Kand % 13) == 0) { k++; continue; }
+                if (Filter[Kand % FILTER_SIZE] != 1) { k++; continue; }
                 if ((Kand % 17) == 0) { k++; continue; }
                 if ((Kand % 19) == 0) { k++; continue; }
+                if ((Kand % 23) == 0) { k++; continue; }
+                if ((Kand % 29) == 0) { k++; continue; }
+                if ((Kand % 31) == 0) { k++; continue; }
 
                 //if (VypocetMOD(FKandidati[k], Kand) == 1) {
                 if (asm_mod(FKandidati[k], Kand) == 1) {
