@@ -226,7 +226,7 @@ BOOL TWorkerV1::UlozenieStavu(BOOL iZobrazenieInfo) {
 //  ...............................................................................................
 void TWorkerV1::ZobrazenieInfo(void) {
     LogPrint("\n---------------------------------------------------------------------------------");
-    LogPrint("\nmersenne_elim verzia 1.04");
+    LogPrint("\nmersenne_elim verzia 1.05");
     LogPrint("\n---------------------------------------------------------------------------------");
     LogPrint("\nNastavenia:");
     LogPrint("\n\tPovolene nacitanie predosleho stavu: %s", ParameterExistuje("-inicializacia") ? "nie" : " ano");
