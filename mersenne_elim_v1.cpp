@@ -229,7 +229,7 @@ BOOL TWorkerV1::UlozenieStavu(BOOL iZobrazenieInfo) {
 //  ...............................................................................................
 void TWorkerV1::ZobrazenieInfo(void) {
     LogPrint("\n---------------------------------------------------------------------------------");
-    LogPrint("\nmersenne_elim verzia 1.06");
+    LogPrint("\nmersenne_elim verzia 1.07");
     LogPrint("\n---------------------------------------------------------------------------------");
     LogPrint("\nNastavenia:");
     LogPrint("\n\tPovolene nacitanie predosleho stavu: %s", ParameterExistuje("-inicializacia") ? "nie" : " ano");
@@ -270,16 +270,19 @@ PVOID VlaknoSpracovanie(PVOID iData) {
         }
 
         Data->Spracovane = true;
+
+        if ((Data->AktualnyKoeficient & 3) == (Data->Kandidati[k + Data->Zaciatok] & 3)) { k++; continue; }
         UINT64 Kand = 2 * Data->AktualnyKoeficient * Data->Kandidati[k + Data->Zaciatok] + 1;
         
-        if ((Kand & 0x7) == 3) { k++; continue; }
-        if ((Kand & 0x7) == 5) { k++; continue; }
-        if (Filter[Kand % FILTER_SIZE] != 1) { k++; continue; }
+//        if ((Kand & 0x7) == 3) { k++; continue; }
+//        if ((Kand & 0x7) == 5) { k++; continue; }
+        if ((Kand % 3) == 0) { k++; continue; }
+        if ((Kand % 5) == 0) { k++; continue; }
+        if ((Kand % 7) == 0) { k++; continue; }
+        if ((Kand % 11) == 0) { k++; continue; }
+        if ((Kand % 13) == 0) { k++; continue; }
         if ((Kand % 17) == 0) { k++; continue; }
         if ((Kand % 19) == 0) { k++; continue; }
-        if ((Kand % 23) == 0) { k++; continue; }
-        if ((Kand % 29) == 0) { k++; continue; }
-        if ((Kand % 31) == 0) { k++; continue; }
 
         //if (VypocetMOD2(Data->Kandidati[k + Data->Zaciatok], Kand) == 1) {
         if (asm_mod(Data->Kandidati[k + Data->Zaciatok], Kand) == 1) {
@@ -325,21 +328,19 @@ void TWorkerV1::Spracovanie(void) {
             UINT64 k = 0; UINT64 PovodnyPocet = FAktualnyPocetKandidatov;
             while(k < FAktualnyPocetKandidatov) {
                 
+                //if (((FAktualnyKoeficient & 3) != 0) && ((FAktualnyKoeficient & 3) != 2)) 
+                if ((FAktualnyKoeficient & 3) == (FKandidati[k] & 3)) { k++; continue; }
                 UINT64 Kand = 2 * FAktualnyKoeficient * FKandidati[k] + 1;
                 
-                if ((Kand & 0x7) == 3) { k++; continue; }
-                if ((Kand & 0x7) == 5) { k++; continue; }
-                //if ((Kand % 3) == 0) { k++; continue; }
-                //if ((Kand % 5) == 0) { k++; continue; }
-                //if ((Kand % 7) == 0) { k++; continue; }
-                //if ((Kand % 11) == 0) { k++; continue; }
-                //if ((Kand % 13) == 0) { k++; continue; }
-                if (Filter[Kand % FILTER_SIZE] != 1) { k++; continue; }
+//                if ((Kand & 0x7) == 3) { k++; continue; }
+//                if ((Kand & 0x7) == 5) { k++; continue; }
+                if ((Kand % 3) == 0) { k++; continue; }
+                if ((Kand % 5) == 0) { k++; continue; }
+                if ((Kand % 7) == 0) { k++; continue; }
+                if ((Kand % 11) == 0) { k++; continue; }
+                if ((Kand % 13) == 0) { k++; continue; }
                 if ((Kand % 17) == 0) { k++; continue; }
                 if ((Kand % 19) == 0) { k++; continue; }
-                if ((Kand % 23) == 0) { k++; continue; }
-                if ((Kand % 29) == 0) { k++; continue; }
-                if ((Kand % 31) == 0) { k++; continue; }
 
                 //if (VypocetMOD(FKandidati[k], Kand) == 1) {
                 if (asm_mod(FKandidati[k], Kand) == 1) {

@@ -1,0 +1,132 @@
+
+---------------------------------------------------------------------------------
+mersenne_elim verzia 1.06
+---------------------------------------------------------------------------------
+Nastavenia:
+	Povolene nacitanie predosleho stavu:  ano
+	Povolene ukladanie stavu: nie
+	Zakladny subor kandidatov: [/home/mhubal/Vyskum/Prvocisla/Mersenne/data/kandidati.txt]
+	Povoleny log: [ano]
+	Interval ukladania stavu: [600 sekund]
+	Pocet vlakien: [1]
+---------------------------------------------------------------------------------
+Inicializacia dat...
+	Ziskava sa pocet zaznamov -> 397624
+	Nacitavaju sa kandidati -> 397624. OK.
+Startovaci pocet kandidatov: 397624
+Startovaci koeficient: 1
+Maximalny koeficient pre spracovanie: 13563782526
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Vysledky spracovania:
+	Pociatocny pocet kandidatov: 397624
+	Koncovy pocet kandidatov: 397624
+	Pocet eliminovanych kandidatov: 0
+	Pociatocny koeficient: 1
+	Posledne spracovany koeficient: 4386
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+mersenne_elim verzia 1.06
+---------------------------------------------------------------------------------
+Nastavenia:
+	Povolene nacitanie predosleho stavu:  ano
+	Povolene ukladanie stavu: nie
+	Zakladny subor kandidatov: [/home/mhubal/Vyskum/Prvocisla/Mersenne/data/kandidati.txt]
+	Povoleny log: [ano]
+	Interval ukladania stavu: [600 sekund]
+	Pocet vlakien: [1]
+---------------------------------------------------------------------------------
+Inicializacia dat...
+	Ziskava sa pocet zaznamov -> 397624
+	Nacitavaju sa kandidati -> 397624. OK.
+Startovaci pocet kandidatov: 397624
+Startovaci koeficient: 1
+Maximalny koeficient pre spracovanie: 13563782526
+---------------------------------------------------------------------------------
+K = 1, 397624 -> 384595 (0.032 sekund)
+K = 3, 384595 -> 376486 (0.058 sekund)
+K = 4, 376486 -> 370947 (0.056 sekund)
+K = 5, 370947 -> 367711 (0.044 sekund)
+K = 7, 367711 -> 365787 (0.037 sekund)
+K = 8, 365787 -> 362984 (0.058 sekund)
+K = 9, 362984 -> 360587 (0.054 sekund)
+K = 11, 360587 -> 359511 (0.035 sekund)
+K = 12, 359511 -> 356064 (0.101 sekund)
+K = 13, 356064 -> 355222 (0.031 sekund)
+K = 15, 355222 -> 353316 (0.073 sekund)
+K = 16, 353316 -> 352096 (0.049 sekund)
+K = 17, 352096 -> 351422 (0.032 sekund)
+K = 19, 351422 -> 350883 (0.030 sekund)
+K = 20, 350883 -> 349476 (0.066 sekund)
+K = 21, 349476 -> 348391 (0.056 sekund)
+K = 23, 348391 -> 347926 (0.033 sekund)
+K = 24, 347926 -> 346288 (0.100 sekund)
+K = 25, 346288 -> 345782 (0.035 sekund)
+K = 27, 345782 -> 345039 (0.053 sekund)
+K = 28, 345039 -> 344308 (0.060 sekund)
+K = 29, 344308 -> 343972 (0.031 sekund)
+K = 31, 343972 -> 343657 (0.030 sekund)
+K = 32, 343657 -> 343016 (0.055 sekund)
+K = 33, 343016 -> 342363 (0.056 sekund)
+K = 35, 342363 -> 341910 (0.044 sekund)
+K = 36, 341910 -> 340866 (0.095 sekund)
+K = 37, 340866 -> 340662 (0.029 sekund)
+K = 39, 340662 -> 340071 (0.056 sekund)
+K = 40, 340071 -> 339475 (0.064 sekund)
+K = 41, 339475 -> 339236 (0.030 sekund)
+K = 43, 339236 -> 339010 (0.030 sekund)
+K = 44, 339010 -> 338506 (0.059 sekund)
+K = 45, 338506 -> 337986 (0.067 sekund)
+K = 47, 337986 -> 337790 (0.031 sekund)
+K = 48, 337790 -> 337035 (0.095 sekund)
+K = 49, 337035 -> 336827 (0.036 sekund)
+K = 51, 336827 -> 336429 (0.055 sekund)
+K = 52, 336429 -> 336052 (0.054 sekund)
+K = 53, 336052 -> 335867 (0.031 sekund)
+K = 55, 335867 -> 335626 (0.039 sekund)
+K = 56, 335626 -> 335226 (0.063 sekund)
+K = 57, 335226 -> 334885 (0.052 sekund)
+K = 59, 334885 -> 334710 (0.034 sekund)
+K = 60, 334710 -> 333923 (0.122 sekund)
+K = 61, 333923 -> 333778 (0.027 sekund)
+K = 63, 333778 -> 333430 (0.059 sekund)
+K = 64, 333430 -> 333135 (0.050 sekund)
+K = 65, 333135 -> 332918 (0.040 sekund)
+K = 67, 332918 -> 332768 (0.029 sekund)
+K = 68, 332768 -> 332454 (0.057 sekund)
+K = 69, 332454 -> 332173 (0.050 sekund)
+K = 71, 332173 -> 332041 (0.033 sekund)
+K = 72, 332041 -> 331534 (0.094 sekund)
+K = 73, 331534 -> 331418 (0.028 sekund)
+K = 75, 331418 -> 331096 (0.065 sekund)
+K = 76, 331096 -> 330876 (0.052 sekund)
+K = 77, 330876 -> 330721 (0.037 sekund)
+K = 79, 330721 -> 330599 (0.029 sekund)
+K = 80, 330599 -> 330301 (0.068 sekund)
+K = 81, 330301 -> 330098 (0.049 sekund)
+K = 83, 330098 -> 329970 (0.030 sekund)
+K = 84, 329970 -> 329487 (0.110 sekund)
+K = 85, 329487 -> 329348 (0.035 sekund)
+K = 87, 329348 -> 329138 (0.051 sekund)
+K = 88, 329138 -> 328927 (0.054 sekund)
+K = 89, 328927 -> 328838 (0.030 sekund)
+K = 91, 328838 -> 328723 (0.036 sekund)
+K = 92, 328723 -> 328501 (0.054 sekund)
+K = 93, 328501 -> 328325 (0.050 sekund)
+K = 95, 328325 -> 328203 (0.039 sekund)
+K = 96, 328203 -> 327823 (0.093 sekund)
+K = 97, 327823 -> 327747 (0.028 sekund)
+K = 99, 327747 -> 327551 (0.056 sekund)
+K = 100, 327551 -> 327329 (0.063 sekund)
+K = 101, 327329 -> 327243 (0.030 sekund)
+K = 103, 327243 -> 327163 (0.029 sekund)
+K = 104, 327163 -> 326996 (0.057 sekund)
+K = 105, 326996 -> 326774 (0.076 sekund)
+---------------------------------------------------------------------------------
+Vysledky spracovania:
+	Pociatocny pocet kandidatov: 397624
+	Koncovy pocet kandidatov: 326774
+	Pocet eliminovanych kandidatov: 70850
+	Pociatocny koeficient: 1
+	Posledne spracovany koeficient: 106
+---------------------------------------------------------------------------------
